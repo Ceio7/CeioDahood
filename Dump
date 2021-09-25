@@ -87,22 +87,3 @@ local Section = Tab:NewSection("Extra")
 Section:NewKeybind("H to toggle UI", "Press H to hide the ui!", Enum.KeyCode.H, function()
 	Library:ToggleUI()
 end)
-
-
-local Window = Library.CreateLib("Customize", colors)
-Section:NewColorPicker("Blue", "Blue", Color3.fromRGB(2,5,6), function(color)
-    print(color)
-end)
-local colors = {
-    SchemeColor = Color3.fromRGB(0,255,255),
-    Background = Color3.fromRGB(0, 0, 0),
-    Header = Color3.fromRGB(0, 0, 0),
-    TextColor = Color3.fromRGB(255,255,255),
-    ElementColor = Color3.fromRGB(40, 10, 35)
-}
-end)
-for theme, color in pairs(themes) do
-    Section:NewColorPicker(theme, "Change your "..theme, color, function(color3)
-        Library:ChangeColor(theme, color3)
-    end)
-end
